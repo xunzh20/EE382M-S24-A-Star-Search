@@ -93,22 +93,23 @@ Implement one 2-pin net detailed routing using A* search on CPU.
 * Write your codes in the `A_Star_Search` class.
 * You can first use your own evaluation code to debug if you find it more convenient. Create a file `A_Star_Search/my_test.py` with the following content. Change `YOUR_UT_EID` to your UT EID.
  ```bash
-    import os
-    from student_impl.eid_YOUR_UT_EID import A_Star_Search
-    eid = "YOUR_UT_EID"
-    idx = 1
-    benchmark_path = f"benchmarks/example_{idx}.txt"
-    output_root = "output"
-    output_root = os.path.join(output_root, eid)
-    if not os.path.isdir(output_root):
-        os.mkdir(output_root)
+import os
+from student_impl.eid_YOUR_UT_EID import A_Star_Search
+eid = "YOUR_UT_EID"
+idx = 1
+benchmark_path = f"benchmarks/example_{idx}.txt"
+output_root = "output"
+output_root = os.path.join(output_root, eid)
+if not os.path.isdir(output_root):
+    os.mkdir(output_root)
 
-    output_path = os.path.join(output_root, os.path.basename(benchmark_path))
-    solver = A_Star_Search()
-    solver.read_benchmark(benchmark_path)
-    solution = solver.solve()solver.plot_solution(solution, os.path.join(output_root, f"example_{idx}_sol.png"))
-    profiling = solver.profile(n_runs=3) # ignore memory for now. runtime will be graded
-    solver.dump_output_file(*solution, *profiling, output_path)
+output_path = os.path.join(output_root, os.path.basename(benchmark_path))
+solver = A_Star_Search()
+solver.read_benchmark(benchmark_path)
+solution = solver.solve()
+solver.plot_solution(solution, os.path.join(output_root, f"example_{idx}_sol.png"))
+profiling = solver.profile(n_runs=3) # ignore memory for now. runtime will be graded
+solver.dump_output_file(*solution, *profiling, output_path)
   ```
 * Use `pdb` or print function to debug your code.
 * Once you successfully dump the solution file `output/YOUR_UT_EID/example_1.txt`, compare it with the ground truth solution `output/reference/example_1.txt`.
