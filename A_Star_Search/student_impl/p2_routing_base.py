@@ -128,7 +128,7 @@ class A_Star_Search_Base(object):
             self.blockage_size_x = blockages[..., 2]
             self.blockage_size_y = blockages[..., 3]
             # print(self.grid_size, self.n_pins, self.n_blockages)
-        self.blockage_map = np.zeros([self.grid_size[1], self.grid_size[0]], dtype=np.bool)
+        self.blockage_map = np.zeros([self.grid_size[1], self.grid_size[0]], dtype=bool)
         for x, y, w, h in zip(
             self.blockage_pos_x, self.blockage_pos_y, self.blockage_size_x, self.blockage_size_y
         ):
@@ -244,7 +244,7 @@ class A_Star_Search_Base(object):
     # Please do not override this method
     def _split_path(self, path: List[Tuple[Tuple[int, int]]]) -> List[Tuple[int, int]]:
         # change from vector-wise path to point-wise path
-        site = np.zeros(self.grid_size, dtype=np.bool)
+        site = np.zeros(self.grid_size, dtype=bool)
         for u, v in path:
             xl, xh = min(u[0], v[0]), max(u[0], v[0])
             yl, yh = min(u[1], v[1]), max(u[1], v[1])
