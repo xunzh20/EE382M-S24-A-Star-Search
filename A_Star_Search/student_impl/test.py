@@ -20,3 +20,4 @@ if __name__ == "__main__":
     solver.read_benchmark("A_Star_Search/benchmarks/example_1.txt")
     solver.print_block()
     solver.print_blockage_pos_x()
+    print(solver.pin_pos_x)
