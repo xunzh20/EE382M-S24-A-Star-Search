@@ -9,8 +9,8 @@ LastEditTime: 2022-03-08 16:04:28
 # Implementation of A Star Search
 # You need to implement initialize() and route_one_net()
 # All codes should be inside A Star Search class
-# Name:
-# UT EID:
+# Name: Xun Zhou
+# UT EID: xz7637
 #######################################################################
 
 from typing import List, Tuple
